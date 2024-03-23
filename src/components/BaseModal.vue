@@ -8,7 +8,9 @@
                         <slot />
                         <button
                             class="bg-red-500 hover:bg-red-400 text-white font-bold py-2 px-4 border-b-4 border-red-700 hover:border-red-500 rounded"
-                            @click="$emit('close-modal')">Close</button>
+                            @click="$emit('close-modal')">
+                            Close
+                        </button>
                     </div>
                 </Transition>
             </div>

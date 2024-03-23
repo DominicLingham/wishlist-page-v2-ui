@@ -3,6 +3,7 @@ import { ref } from "vue";
 import HeroComponent from '@/components/layouts/HeroComponent.vue';
 import BaseModal from '@/components/BaseModal.vue'
 import SavedWishlistsListing from "@/components/SavedWishlistsListing.vue";
+import CreateWishlistForm from '@/components/CreateWishlistForm.vue';
 
 const modalActive = ref(null);
 const toggleModal = () => {
@@ -29,7 +30,7 @@ const toggleModal = () => {
     </div>
     <h1 class="text-white" v-for="item in wishlists" :key="item">{{ item }}</h1>
     <BaseModal :modal-active="modalActive" @close-modal="toggleModal">
-      <p>This is some stuff in the modal!</p>
+      <CreateWishlistForm />
     </BaseModal>
     <SavedWishlistsListing />
   </main>
