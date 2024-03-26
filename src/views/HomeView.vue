@@ -29,8 +29,8 @@ const toggleModal = () => {
       </button>
     </div>
     <h1 class="text-white" v-for="item in wishlists" :key="item">{{ item }}</h1>
-    <BaseModal :modal-active="modalActive" @close-modal="toggleModal">
-      <CreateWishlistForm />
+    <BaseModal :modal-active="modalActive">
+      <CreateWishlistForm @close-modal="toggleModal" />
     </BaseModal>
     <SavedWishlistsListing />
   </main>
