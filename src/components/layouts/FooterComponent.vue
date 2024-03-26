@@ -1,6 +1,7 @@
 <template>
     <!--Footer container-->
-    <footer class="flex flex-col items-center bg-zinc-50 text-center text-surface dark:bg-neutral-700 dark:text-white">
+    <footer
+        class="flex flex-col items-center bg-zinc-50 text-center text-surface dark:bg-neutral-700 dark:text-white shadow-lg shadow-neutral-800">
         <div class="container pt-9">
             <!-- Social media icons container -->
             <div class="mb-6 flex justify-center space-x-2">

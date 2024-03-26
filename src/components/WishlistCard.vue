@@ -1,7 +1,7 @@
 <template>
     <RouterLink :to="{ name: 'wishlist' }">
         <div
-            class="block rounded-lg bg-background-secondary p-6 text-surface shadow-md shadow-black text-gray-50 max-w-md mb-3 hover:bg-red-300 hover:text-red-600">
+            class="block rounded-lg bg-neutral-700 p-6 text-surface shadow-md shadow-neutral-800 text-gray-50 max-w-md mb-3 hover:bg-red-300 hover:text-red-600">
             <h5 class="mb-2 text-xl font-medium leading-tight">😂 Card title</h5>
             <p class="mb-4 text-base">
                 Some quick example text to build on the card title and make up the
