@@ -9,7 +9,8 @@
       </div>
 
       <div class="flex flex-col">
-        <!--Wishlist name TODO: create reusable component-->
+        <!--Wishlist name-->
+        <!--TODO: Create reusable input component-->
         <div class="mb-3">
           <label for="wishlist-name" class="block mb-2 text-sm font-medium text-gray-900">
             Give your wishlist a name!😜 (max 20 characters)
@@ -79,6 +80,7 @@
 import { ref, watch, defineEmits } from 'vue'
 import { useWishlistStore } from '@/stores/common'
 import { getCurrentDateTime, createId } from '@/helpers/commonHelper'
+import { router } from '../router/index.js'
 
 /// Stores
 const wishlistStore = useWishlistStore()
@@ -103,9 +105,8 @@ const saveNewWishlist = () => {
     dateCreated: getCurrentDateTime(),
     emoji: wishlistCategory.value[0]
   }
-
-  console.log(newWishlist)
   wishlistStore.addWishlist(newWishlist)
+  router.push({ name: 'wishlist', params: { id: newWishlist.id } })
 }
 
 /// Watcher to update wishlistEmoji based on selected category

@@ -14,6 +14,8 @@
         :emoji="wishlist.emoji"
         :date-created="wishlist.dateCreated"
         :id="wishlist.id"
+        @remove-wishlist="removeWishlist(wishlist.id)"
+        @open-wishlist="openWishlist(wishlist.id)"
       />
     </div>
   </div>
@@ -24,11 +26,22 @@ import { useWishlistStore } from '@/stores/common'
 import { computed } from 'vue'
 import WishlistCard from './WishlistCard.vue'
 import { getCurrentDateTime, createId } from '@/helpers/commonHelper'
+import { router } from '@/router'
 
 const wishlistStore = useWishlistStore()
 
 // /// Computed
 const userWishlists = computed(() => wishlistStore.userWishlists)
+
+/// Methods
+// Method to remove wishlist
+const removeWishlist = (id) => {
+  wishlistStore.removeWishlist(id)
+}
+
+const openWishlist = (id) => {
+  router.push({ name: 'wishlist', params: { id: id } })
+}
 </script>
 
 <style lang="scss" scoped></style>

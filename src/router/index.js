@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import NewWishlistView from '@/views/NewWishlistView.vue'
 
-const router = createRouter({
+export const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
@@ -11,11 +11,9 @@ const router = createRouter({
       component: HomeView
     },
     {
-      path: '/wishlist',
+      path: '/wishlist/:id',
       name: 'wishlist',
       component: NewWishlistView
     }
   ]
 })
-
-export default router

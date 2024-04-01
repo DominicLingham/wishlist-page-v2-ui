@@ -1,5 +1,4 @@
 import { defineStore } from 'pinia'
-import { computed } from 'vue'
 
 export const useWishlistStore = defineStore({
   id: 'wishlistStore',
@@ -18,6 +17,15 @@ export const useWishlistStore = defineStore({
     },
     persistWishlists() {
       localStorage.setItem('wishlists', JSON.stringify(this.wishlists))
+    },
+    removeWishlist(id) {
+      const index = this.wishlists.findIndex((wishlist) => wishlist.id === id)
+
+      if (index !== -1) {
+        this.wishlists.splice(index, 1)
+
+        this.persistWishlists()
+      }
     }
   }
 })
