@@ -26,6 +26,9 @@ export const useWishlistStore = defineStore({
 
         this.persistWishlists()
       }
+    },
+    getWishlistById(id) {
+      return id ? this.wishlists.find((wishlist) => wishlist.id === id) : null
     }
   }
 })

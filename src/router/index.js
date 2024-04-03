@@ -11,7 +11,7 @@ export const router = createRouter({
       component: HomeView
     },
     {
-      path: '/wishlist/:id',
+      path: '/wishlist',
       name: 'wishlist',
       component: NewWishlistView
     }

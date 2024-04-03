@@ -106,7 +106,7 @@ const saveNewWishlist = () => {
     emoji: wishlistCategory.value[0]
   }
   wishlistStore.addWishlist(newWishlist)
-  router.push({ name: 'wishlist', params: { id: newWishlist.id } })
+  router.push({ name: 'wishlist', query: { id: newWishlist.id } })
 }
 
 /// Watcher to update wishlistEmoji based on selected category
